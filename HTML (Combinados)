@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Casos de Estudio - Combinados</title>
+</head>
+<body>
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th colspan="3">Casos de Estudio Combinados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Caso 1 -->
+      <tr>
+        <td colspan="3" align="center"><b>Caso 1 - Ventas Tienda</b></td>
+      </tr>
+      <tr>
+        <td><button id="btnCargar1">Cargar Ventas</button></td>
+        <td><button id="btnPresentar1">Presentar</button></td>
+        <td><textarea id="listado1" rows="10" cols="40" readonly></textarea></td>
+      </tr>
+
+      <!-- Caso 2 -->
+      <tr>
+        <td colspan="3" align="center"><b>Caso 2 - Citas Clínica</b></td>
+      </tr>
+      <tr>
+        <td><button id="btnCargar2">Cargar Citas</button></td>
+        <td><button id="btnPresentar2">Presentar</button></td>
+        <td><textarea id="listado2" rows="10" cols="40" readonly></textarea></td>
+      </tr>
+
+      <!-- Caso 3 -->
+      <tr>
+        <td colspan="3" align="center"><b>Caso 3 - Envíos Agencia</b></td>
+      </tr>
+      <tr>
+        <td><button id="btnCargar3">Cargar Envíos</button></td>
+        <td><button id="btnPresentar3">Presentar</button></td>
+        <td><textarea id="listado3" rows="10" cols="40" readonly></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="./JS/App.js"></script>
+</body>
+</html>
