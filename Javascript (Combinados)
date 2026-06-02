@@ -1,0 +1,98 @@
+// Caso 1: Ventas
+const btnCargar1 = document.getElementById('btnCargar1');
+const btnPresentar1 = document.getElementById('btnPresentar1');
+const listado1 = document.getElementById('listado1');
+
+let vectorVentas = [];
+const vectorCategorias = ["Arroz", "Azúcar", "Leche", "Aceite", "Pan", "Bebidas", "Galletas"];
+
+btnCargar1.addEventListener('click', function () {
+  vectorVentas = [120, 95, 140, 170, 210, 130, 105];
+  listado1.value = "Ventas cargadas correctamente.";
+});
+
+btnPresentar1.addEventListener('click', function () {
+  let total = 0;
+  for (let i = 0; i < vectorVentas.length; i++) total += vectorVentas[i];
+
+  let promedio = total / vectorVentas.length;
+  let superiores = 0, criticas = 0, porcentajes = [];
+
+  for (let i = 0; i < vectorVentas.length; i++) {
+    if (vectorVentas[i] > promedio) superiores++;
+    if (vectorVentas[i] < 100) criticas++;
+    let porcentaje = Math.round((vectorVentas[i] / total) * 1000) / 10;
+    porcentajes.push(porcentaje.toFixed(1));
+  }
+
+  let salida = "Total: " + total + "\nPromedio: " + promedio.toFixed(2) + "\nSuperiores al promedio: " + superiores + "\nCríticas (<100): " + criticas + "\nPorcentajes:\n";
+  for (let i = 0; i < vectorCategorias.length; i++) salida += vectorCategorias[i] + ": " + porcentajes[i] + "%\n";
+
+  listado1.value = salida;
+});
+
+// Caso 2: Citas
+const btnCargar2 = document.getElementById('btnCargar2');
+const btnPresentar2 = document.getElementById('btnPresentar2');
+const listado2 = document.getElementById('listado2');
+
+let vectorCitas = [];
+const vectorEspecialidades = ["Ortodoncia", "Periodoncia", "Endodoncia", "Estética", "Implantes", "Urgencias", "Limpieza"];
+
+btnCargar2.addEventListener('click', function () {
+  vectorCitas = [85, 102, 98, 180, 98, 175, 150];
+  listado2.value = "Citas cargadas correctamente.";
+});
+
+btnPresentar2.addEventListener('click', function () {
+  let total = 0;
+  for (let i = 0; i < vectorCitas.length; i++) total += vectorCitas[i];
+
+  let promedio = total / vectorCitas.length;
+  let superiores = 0, criticas = 0, porcentajes = [];
+
+  for (let i = 0; i < vectorCitas.length; i++) {
+    if (vectorCitas[i] > promedio) superiores++;
+    if (vectorCitas[i] < 100) criticas++;
+    let porcentaje = Math.round((vectorCitas[i] / total) * 1000) / 10;
+    porcentajes.push(porcentaje.toFixed(1));
+  }
+
+  let salida = "Total: " + total + "\nPromedio: " + promedio.toFixed(2) + "\nSuperiores al promedio: " + superiores + "\nCríticas (<100): " + criticas + "\nPorcentajes:\n";
+  for (let i = 0; i < vectorEspecialidades.length; i++) salida += vectorEspecialidades[i] + ": " + porcentajes[i] + "%\n";
+
+  listado2.value = salida;
+});
+
+// Caso 3: Envíos
+const btnCargar3 = document.getElementById('btnCargar3');
+const btnPresentar3 = document.getElementById('btnPresentar3');
+const listado3 = document.getElementById('listado3');
+
+let vectorEnvios = [];
+const vectorZonas = ["Norte", "Sur", "Este", "Oeste", "Centro", "Noroeste", "Sureste"];
+
+btnCargar3.addEventListener('click', function () {
+  vectorEnvios = [140, 140, 110, 125, 160, 190, 110];
+  listado3.value = "Envíos cargados correctamente.";
+});
+
+btnPresentar3.addEventListener('click', function () {
+  let total = 0;
+  for (let i = 0; i < vectorEnvios.length; i++) total += vectorEnvios[i];
+
+  let promedio = total / vectorEnvios.length;
+  let superiores = 0, criticas = 0, porcentajes = [];
+
+  for (let i = 0; i < vectorEnvios.length; i++) {
+    if (vectorEnvios[i] > promedio) superiores++;
+    if (vectorEnvios[i] < 100) criticas++;
+    let porcentaje = Math.round((vectorEnvios[i] / total) * 1000) / 10;
+    porcentajes.push(porcentaje.toFixed(1));
+  }
+
+  let salida = "Total: " + total + "\nPromedio: " + promedio.toFixed(2) + "\nSuperiores al promedio: " + superiores + "\nCríticas (<100): " + criticas + "\nPorcentajes:\n";
+  for (let i = 0; i < vectorZonas.length; i++) salida += vectorZonas[i] + ": " + porcentajes[i] + "%\n";
+
+  listado3.value = salida;
+});
